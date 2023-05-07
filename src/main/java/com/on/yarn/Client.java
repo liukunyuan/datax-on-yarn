@@ -308,13 +308,13 @@ public class Client {
 
         user = cliParser.getOptionValue("proxy_user");
 
-        if (StringUtils.isNotBlank(user)) {
-            String mkdirStr = "hdfs dfs -mkdir /user/{}";
-            String chownStr = "hdfs dfs -chown -R {} /user/{}";
-            Constants.exec(StrUtil.format(mkdirStr, user));
-            Constants.exec(StrUtil.format(chownStr,user, user));
-            System.setProperty("HADOOP_USER_NAME", user);
-        }
+//        if (StringUtils.isNotBlank(user)) {
+//            String mkdirStr = "hdfs dfs -mkdir /user/{}";
+//            String chownStr = "hdfs dfs -chown -R {} /user/{}";
+//            Constants.exec(StrUtil.format(mkdirStr, user));
+//            Constants.exec(StrUtil.format(chownStr,user, user));
+//            System.setProperty("HADOOP_USER_NAME", user);
+//        }
 
         if (cliParser.hasOption("shell_args")) {
             shellArgs = cliParser.getOptionValues("shell_args");
